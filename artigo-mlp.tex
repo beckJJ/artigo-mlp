@@ -55,22 +55,12 @@ Ao longo dos anos, o C++ evoluiu continuamente, com a introdução de novos recu
 
 As linguagens de programação C e C++ estão intimamente relacionadas, mas têm algumas diferenças significativas. Uma das suas diferenças será abordada nesse artigo, segurança de ponteiros.
 
-\section{First Page} \label{sec:firstpage}
+\section{Endereço} \label{sec:endereco}
+Antes de abordar a segurança de ponteiros, serão estabelecidos alguns conceitos antes, o primeiro é o de endereços de memória.
 
-The first page must display the paper title, the name and address of the
-authors, the abstract in English and ``resumo'' in Portuguese (``resumos'' are
-required only for papers written in Portuguese). The title must be centered
-over the whole page, in 16 point boldface font and with 12 points of space
-before itself. Author names must be centered in 12 point font, bold, all of
-them disposed in the same line, separated by commas and with 12 points of
-space after the title. Addresses must be centered in 12 point font, also with
-12 points of space after the authors' names. E-mail addresses should be
-written using font Courier New, 10 point nominal size, with 6 points of space
-before and 6 points of space after.
+Programas de computador utilizam um espaço da memória para armazenar seus dados, esse espaço de memória alocado para um programa é dividido em endereços de memória, que são valores indicando a posição em que um dado está na memória. Esse número pode ser absoluto ou relativo, dependendo do modo de endereçamento utilizado. As diferenças entre os modos de endereçamento são importantes para programação em baixo nível, mas no caso de C e C++ não é necessário se preocupar com isso.
 
-The abstract and ``resumo'' (if is the case) must be in 12 point Times font,
-indented 0.8cm on both sides. The word \textbf{Abstract} and \textbf{Resumo},
-should be written in boldface and must precede the text.
+Os dados de um programa ocupam um certo número de bytes consecutivos na memória do computador, dependendo de seu tipo. Por exemplo, em C e C++ uma variável do tipo \texttt{char} ocupa um byte de memória, e uma variável do tipo \texttt{int} pode ocupar 2 ou 4 bytes, dependendo da arquitetura.
 
 \section{CD-ROMs and Printed Proceedings}
 
