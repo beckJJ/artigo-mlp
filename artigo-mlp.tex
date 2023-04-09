@@ -73,12 +73,23 @@ Os ponteiros também são usados em C e C++ para alocar memória dinamicamente. 
 
 Por mais que C e C++ tenham o conceito de ponteiros, existem algumas diferenças importantes na maneira como os ponteiros são usados em C e C++. Em C, um ponteiro é simplesmente um endereço de memória. Ele pode ser usado para acessar e manipular a memória diretamente, sem a necessidade de qualquer informação adicional. Isso torna os ponteiros em C mais poderosos, mas também mais perigosos, pois é fácil causar vazamentos de memória, estouros de buffer, e outros tipos de erros.
 
-\section{Sections and Paragraphs}
+\section{Diferenças de Ponteiros em C e C++}
 
-Section titles must be in boldface, 13pt, flush left. There should be an extra
-12 pt of space before each title. Section numbering is optional. The first
-paragraph of each section should not be indented, while the first lines of
-subsequent paragraphs should be indented by 1.27 cm.
+Os ponteiros em C possuem tipagem fraca, ou seja, é permitido atribuir um ponteiro do tipo \texttt{void*} para qualquer outro tipo de ponteiro sem necessidade de conversão de tipos, essa conversão é realizada implicitamente. Essa característica é bastante utilizada com as funções de alocação dinâmica de memória da biblioteca padrão \texttt{malloc()} e \texttt{calloc}, a seguir temos alguns exemplos de construções válidas em C que não são válidas em C++:
+\begin{verbatim}
+int *p = malloc(5 * sizeof(int));
+int *q = calloc(5, sizeof(int));
+char *c = "abc";
+\end{verbatim}
+
+C++ tem regras de tipagem mais restritas e não permite as construções acima, porque é necessário converter explicitamente o tipo dos ponteiros. As construções acima devem ser modificadas para serem construções válidas em C++:
+\begin{verbatim}
+int *p = (int*)malloc(5 * sizeof(int));
+int *q = (int*)calloc(5, sizeof(int));
+char *c = (char*)"abc";
+\end{verbatim}
+
+No caso das funções \texttt{malloc()} e \texttt{calloc()}, é necessário realizar a conversão explícita para atribuir a um ponteiro do tipo \texttt{int*} porque o tipo de retorno das funções é \texttt{void*}; no terceiro caso, é  C++ não permite a conversão implicita de strings para \texttt{char*}.
 
 \subsection{Subsections}
 
@@ -93,44 +104,6 @@ both margins, as shown in Figure~\ref{fig:exampleFig2}. The caption font must
 be Helvetica, 10 point, boldface, with 6 points of space before and after each
 caption.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.5\textwidth]{fig1.jpg}
-\caption{A typical figure}
-\label{fig:exampleFig1}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.3\textwidth]{fig2.jpg}
-\caption{This figure is an example of a figure caption taking more than one
-  line and justified considering margins mentioned in Section~\ref{sec:figs}.}
-\label{fig:exampleFig2}
-\end{figure}
-
-In tables, try to avoid the use of colored or shaded backgrounds, and avoid
-thick, doubled, or unnecessary framing lines. When reporting empirical data,
-do not use more decimal digits than warranted by their precision and
-reproducibility. Table caption must be placed before the table (see Table 1)
-and the font used must also be Helvetica, 10 point, boldface, with 6 points of
-space before and after each caption.
-
-\begin{table}[ht]
-\centering
-\caption{Variables to be considered on the evaluation of interaction
-  techniques}
-\label{tab:exTable1}
-\includegraphics[width=.7\textwidth]{table.jpg}
-\end{table}
-
-\section{Images}
-
-All images and illustrations should be in black-and-white, or gray tones,
-excepting for the papers that will be electronically available (on CD-ROMs,
-internet, etc.). The image resolution on paper should be about 600 dpi for
-black-and-white images, and 150-300 dpi for grayscale images.  Do not include
-images with excessive resolution, as they may take hours to print, without any
-visible difference in the result. 
 
 \section{References}
 
