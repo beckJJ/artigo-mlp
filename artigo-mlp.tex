@@ -14,10 +14,9 @@
 \author{Akim L. Pizutti, Pedro C. Beck, Rafael M. Rache}
 
 
-\address{Instituto de Informática -- Universidade Federal do Rio Grande do Sul
-  (UFRGS)\\
-Porto Alegre -- RS -- Brazil
-  \email{alpizutti@inf.ufrgs.br, pedro.beck@inf.ufrgs.br,  rmrache@inf.ufrgs.br}
+\address{Instituto de Informática -- Universidade Federal do Rio Grande do Sul\\
+Porto Alegre -- RS -- Brasil
+  \email{alpizutti@inf.ufrgs.br, pedro.beck@inf.ufrgs.br,  rafael.rache@inf.ufrgs.br}
 }
 
 \begin{document} 
@@ -55,20 +54,24 @@ Ao longo dos anos, o C++ evoluiu continuamente, com a introdução de novos recu
 
 As linguagens de programação C e C++ estão intimamente relacionadas, mas têm algumas diferenças significativas. Uma das suas diferenças será abordada nesse artigo, segurança de ponteiros.
 
-\section{Endereço} \label{sec:endereco}
+\section{Endereços} \label{sec:endereco}
 Antes de abordar a segurança de ponteiros, serão estabelecidos alguns conceitos antes, o primeiro é o de endereços de memória.
 
 Programas de computador utilizam um espaço da memória para armazenar seus dados, esse espaço de memória alocado para um programa é dividido em endereços de memória, que são valores indicando a posição em que um dado está na memória. Esse número pode ser absoluto ou relativo, dependendo do modo de endereçamento utilizado. As diferenças entre os modos de endereçamento são importantes para programação em baixo nível, mas no caso de C e C++ não é necessário se preocupar com isso.
 
 Os dados de um programa ocupam um certo número de bytes consecutivos na memória do computador, dependendo de seu tipo. Por exemplo, em C e C++ uma variável do tipo \texttt{char} ocupa um byte de memória, e uma variável do tipo \texttt{int} pode ocupar 2 ou 4 bytes, dependendo da arquitetura.
 
-\section{CD-ROMs and Printed Proceedings}
+\section{Ponteiros}
 
-In some conferences, the papers are published on CD-ROM while only the
-abstract is published in the printed Proceedings. In this case, authors are
-invited to prepare two final versions of the paper. One, complete, to be
-published on the CD and the other, containing only the first page, with
-abstract and ``resumo'' (for papers in Portuguese).
+Em C e C++, um ponteiro é uma variável que contém o endereço de memória de outra variável. Em outras palavras, um ponteiro aponta para a localização de uma variável em memória. O conceito de ponteiros é uma das características mais importantes e poderosas das linguagens C e C++.
+
+Os ponteiros em C e C++ são declarados usando o operador de asterisco (\texttt{*}). Para declarar um ponteiro, o nome da variável é precedido pelo operador de asterisco. Por exemplo, a declaração \texttt{int *p;} declara um ponteiro chamado \texttt{p} para um valor inteiro.
+
+Os ponteiros são frequentemente usados em C e C++ para acessar e manipular dados na memória. Ao usar um ponteiro, um programa pode acessar diretamente a memória que armazena uma variável. Por exemplo, um programa pode usar um ponteiro para percorrer um array de valores, usando-o para acessar diretamente cada valor do array na memória.
+
+Os ponteiros também são usados em C e C++ para alocar memória dinamicamente. Em vez de alocar um bloco fixo de memória para uma variável, um programa pode usar um ponteiro e alocar a quantidade necessária de memória para guardar a variável em tempo de execução.
+
+Por mais que C e C++ tenham o conceito de ponteiros, existem algumas diferenças importantes na maneira como os ponteiros são usados em C e C++. Em C, um ponteiro é simplesmente um endereço de memória. Ele pode ser usado para acessar e manipular a memória diretamente, sem a necessidade de qualquer informação adicional. Isso torna os ponteiros em C mais poderosos, mas também mais perigosos, pois é fácil causar vazamentos de memória, estouros de buffer, e outros tipos de erros.
 
 \section{Sections and Paragraphs}
 
