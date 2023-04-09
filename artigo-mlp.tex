@@ -24,21 +24,11 @@ Porto Alegre -- RS -- Brasil
 \maketitle
 
 \begin{abstract}
-  This meta-paper describes the style to be used in articles and short papers
-  for SBC conferences. For papers in English, you should add just an abstract
-  while for the papers in Portuguese, we also ask for an abstract in
-  Portuguese (``resumo''). In both cases, abstracts should not have more than
-  10 lines and must be in the first page of the paper.
+This paper discusses the usage of pointers in C and C++. The concept of pointers is explained and how they are delcared and used in both languages. The differences in pointer typing between C and C++ are presented, as well as the safety features introduced in C++ to help developers work with pointers in a safe manner.
 \end{abstract}
      
 \begin{resumo} 
-  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e
-  resumos de artigos para publicação nos anais das conferências organizadas
-  pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos
-  escritos em português. Artigos em inglês deverão apresentar apenas abstract.
-  Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract)
-  não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
-  página do artigo.
+Este artigo aborda a utilização de ponteiros em C e C++. O conceito de ponteiros é explicado e como eles são declarados e utilizados nas linguagens. São apresentadas as diferenças entre a tipagem de ponteiros em C e C++ e os mecanismos de segurança introduzidos em C++ para utilizar ponteiros de maneira mais segura.
 \end{resumo}
 
 
@@ -91,28 +81,27 @@ char *c = (char*)"abc";
 
 No caso das funções \texttt{malloc()} e \texttt{calloc()}, é necessário realizar a conversão explícita para atribuir a um ponteiro do tipo \texttt{int*} porque o tipo de retorno das funções é \texttt{void*}; no terceiro caso, C++ não permite a conversão implicita de strings para \texttt{char*}.
 
-\subsection{Subsections}
+Além disso, C++ possui novos operadores para alocar e desalocar memória, \texttt{new} é uma palavra-chave utilizada em C++ para alocar memória e inicializar um objeto dinamicamente na execução, e para desalocar a memória de um objeto inicializado com \texttt{new}, usa-se a função \texttt{delete}. Pode-se argumentar que alocar memória com \texttt{new} é mais seguro que usar as funções \texttt{malloc()} ou \texttt{calloc()} porque não é necessário informar o espaço que deverá ser alocado para uma variável, isso já é tratado internamente pelo programa.
 
-The subsection titles must be in boldface, 12pt, flush left.
+\section{Segurança de Ponteiros em C++}
 
-\section{Figures and Captions}\label{sec:figs}
+A segurança de ponteiros é uma preocupação tanto em C quanto C++, especialmente quando se trata de alocação e desalocação dinâmica de memória. 
 
+Em C++, as keywords \texttt{new} e \texttt{delete} ajudam a tornar o uso de ponteiros mais seguro, pois garantem que a memória seja corretamente alocada e desalocada. Com \texttt{new}, é possível criar objetos dinamicamente e inicializá-los, enquanto \texttt{delete} libera a memória alocada para esses objetos. O uso de \texttt{new} e \texttt{delete} também ajuda a prevenir vazamentos de memória e estouros de buffer, o que pode ocorrer com o uso inadequado de \texttt{malloc()} e \texttt{free()}. Além disso, os ponteiros em C++ não permitem conversão implicita de tipos, ou seja, é necessário indicar o tipo do objeto que está sendo alocado com o uso de funções da biblioteca padrão de C, o que ajuda a evitar erros de tipo.
 
-Figure and table captions should be centered if less than one line
-(Figure~\ref{fig:exampleFig1}), otherwise justified and indented by 0.8cm on
-both margins, as shown in Figure~\ref{fig:exampleFig2}. The caption font must
-be Helvetica, 10 point, boldface, with 6 points of space before and after each
-caption.
+C++ também possui a keyword \texttt{nullptr}, que é um valor especial que pode ser atribuído a um ponteiro para indicar que ele não aponta para nenhum endereço válido de memória. Ao invés de utilizar o valor 0 ou \texttt{NULL} para indicar que um ponteiro é nulo, utilizar \texttt{nullptr} é mais claro para alguém que está lendo o código, e pode evitar erros.
 
-\section{References}
+\subsection{Exceções}
+As exceções em C++ são frequentemente utilizadas para tratar erro durante a alocação de memória com ponteiros. Por exemplo, se um programa tentar alocar uma grande quantidade de memória com \texttt{new} e não houver memória suficiente disponível, uma exceção do tipo \texttt{std::bad\_alloc} será lançada.
 
-Bibliographic references must be unambiguous and uniform.  We recommend giving
-the author names references in brackets, e.g. \cite{knuth:84},
-\cite{boulic:91}, and \cite{smith:99}.
+\section{Conclusão}
+Ponteiros são uma das características masi importantes e poderosas de C e C++. Eles permitem o acesso direto à memória e alocação dinâmica de memória. No entando, o uso incorreto de ponteiros pode levar a erros de segurança e bugs no programa, como vazamentos de memória e estouros de buffer. C++ possui alguns mecanismos extras para auxiliar desenvolvedores na utilização de ponteiros e prevenir erros, que é uma de suas diferenças de incompatibilidade com C. 
 
-The references must be listed using 12 point font size, with 6 points of space
-before each reference. The first line of each reference should not be
-indented, while the subsequent should be indented by 0.5 cm.
+\section{Bibliografia}
+
+ISO/IEC. (2017). Working Draft, Standard for Programming Language C++. 2017. Disponível em: \url{http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/n4659.pdf}.
+
+Stroustrup, B. (1999). An Overview of the C++ Programming Language. Disponível em \url{https://web.archive.org/web/20120816122304/http://www.stroustrup.com/crc.pdf}
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}
