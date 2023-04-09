@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.16)  9 APR 2023 16:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.3.16)  9 APR 2023 16:31
 entering extended mode
 **./artigo-mlp.tex
 (artigo-mlp.tex
@@ -285,13 +285,21 @@ Overfull \hbox (29.20866pt too wide) in paragraph at lines 24--24
 
 {C:/Users/User/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
 
-LaTeX Warning: Citation `knuth:84' on page 3 undefined on input line 111.
+LaTeX Warning: Reference `fig:exampleFig1' on page 3 undefined on input line 10
+2.
 
 
-LaTeX Warning: Citation `boulic:91' on page 3 undefined on input line 112.
+LaTeX Warning: Reference `fig:exampleFig2' on page 3 undefined on input line 10
+3.
 
 
-LaTeX Warning: Citation `smith:99' on page 3 undefined on input line 112.
+LaTeX Warning: Citation `knuth:84' on page 3 undefined on input line 110.
+
+
+LaTeX Warning: Citation `boulic:91' on page 3 undefined on input line 111.
+
+
+LaTeX Warning: Citation `smith:99' on page 3 undefined on input line 111.
 
 No file artigo-mlp.bbl.
 [3] (artigo-mlp.aux)
@@ -300,10 +308,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5066 strings out of 479334
- 81155 string characters out of 2857559
- 400783 words of memory out of 3000000
- 22456 multiletter control sequences out of 15000+200000
+ 5065 strings out of 479334
+ 81141 string characters out of 2857559
+ 400759 words of memory out of 3000000
+ 22455 multiletter control sequences out of 15000+200000
  418493 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,8n,88p,532b,347s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -315,7 +323,7 @@ b><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pf
 b><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb
 ><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on artigo-mlp.pdf (3 pages, 85946 bytes).
+Output written on artigo-mlp.pdf (3 pages, 85973 bytes).
 PDF statistics:
  37 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
